@@ -1,6 +1,8 @@
 # CtyptoTool
 Decryption of the Caesar cipher, RSA and others.
 
+This script is intended to help all those who participate in CTF competitions or just want to try their hand at cryptography.
+
 USAGE:
 
 1) To decrypt the Сaesar cipher type: cas
@@ -13,4 +15,11 @@ USAGE:
 
 5) To quit type: quit
 
-This script is intended to help all those who participate in CTF competitions or just want to try their hand at cryptography.
+         ／＞　 フ
+　　　　　| 　_　 _|
+　 　　　／`ミ _x 彡
+　　 　 /　　　 　 |
+　　　 /　 ヽ　　 ﾉ
+　／￣|　　 |　|　|
+　| (￣ヽ＿_ヽ_)_)
+　＼二つ
