@@ -1,3 +1,5 @@
+from PIL import Image
+
 print('***CRYPTOTOOL***')                                                                                    
 print('_________________')
 print()
@@ -42,9 +44,10 @@ def caesar(s, x):
 def rsa():
     pass
 
-print('Что бы расшифровать шифр цезаря введите cas')
-print('Что бы расшифровать шифр RSA ввделите rsa')
-print('Что бы выйти введите quit')
+print('Чтобы расшифровать шифр цезаря введите cas')
+print('Чтобы расшифровать шифр RSA ввделите rsa')
+print('Что бы расшифровать Visual Crpto введите vc')
+print('Чтобы выйти введите quit')
 
 a = input()
 
@@ -61,3 +64,23 @@ if a == 'cas':
     elif a == 'no':
         s = input('Введите строку ')
         caesar(s, 0)
+if a == 'vc':
+    print('Введите полное название первой картинки')
+    a1 = input()
+    print('Введите полное название второй картинки')
+    a2 = input()
+    i1 = Image.open(a1)
+    pix1 = i1.load()
+    i2 = Image.open(a2)
+    pix2 = i2.load()
+
+    flag = Image.new("RGB", i1.size)
+    flagpix = flag.load()
+    for row in range(i1.size[1]):
+        for col in range(i1.size[0]):
+            flagpix[col, row] = (
+                (pix1[col, row][0]+pix2[col, row][0]) % 256,
+                (pix1[col, row][1]+pix2[col, row][1]) % 256,
+                (pix1[col, row][2]+pix2[col, row][2]) % 256)
+
+    flag.save("flag.png")
