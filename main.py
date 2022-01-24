@@ -1,3 +1,4 @@
+from re import L
 from PIL import Image
 
 print('***CRYPTOTOOL***')                                                                                    
@@ -44,12 +45,18 @@ def caesar(s, x):
 def rsa():
     pass
 
-print('Чтобы расшифровать шифр цезаря введите cas')
-print('Чтобы расшифровать шифр RSA ввделите rsa')
-print('Что бы расшифровать Visual Crpto введите vc')
-print('Чтобы выйти введите quit')
+print('Чтобы расшифровать шифр цезаря введите: cas')
+print('Чтобы расшифровать шифр RSA ввделите: rsa')
+print('Что бы расшифровать Visual Crpto введите: vc')
+print('Что бы преобразовать HEX в текст введите: hex')
+print('Чтобы выйти введите: quit')
 
-a = input()
+a = ''
+def inp():
+    global a
+    a = input()
+
+inp()
 
 if a == 'quit':
     quit()
@@ -82,5 +89,12 @@ if a == 'vc':
                 (pix1[col, row][0]+pix2[col, row][0]) % 256,
                 (pix1[col, row][1]+pix2[col, row][1]) % 256,
                 (pix1[col, row][2]+pix2[col, row][2]) % 256)
-
     flag.save("flag.png")
+if a not in ['hex', 'rsa', 'cas', 'vc']:
+    print('error: Неизвесная комманда, попробуйте еще раз')
+    inp()
+if a == 'hex':
+    print('Введите строку')
+    s = input()
+    print('Результат:')
+    print(bytearray.fromhex(s).decode())
