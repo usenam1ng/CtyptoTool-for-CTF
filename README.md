@@ -2,6 +2,7 @@
 Decryption of the Caesar cipher, RSA and others.
 
 USAGE:
+
 To decrypt the Сaesar cipher type: cas
 To decrypt the RSA cipher type: rsa
 To decrypt Visual Crpto type: vs
