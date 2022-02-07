@@ -1,3 +1,4 @@
+import base64
 from re import L
 from PIL import Image
 
@@ -49,6 +50,8 @@ print('Чтобы расшифровать шифр цезаря введите:
 print('Чтобы расшифровать шифр RSA ввделите: rsa')
 print('Что бы расшифровать Visual Crpto введите: vc')
 print('Что бы преобразовать HEX в текст введите: hex')
+print('Что бы декодировать base64 введите: b64')
+print('Что бы декодировать base64 введите: b32')
 print('Чтобы выйти введите: quit')
 
 a = ''
@@ -71,6 +74,7 @@ if a == 'cas':
     elif a == 'no':
         s = input('Введите строку ')
         caesar(s, 0)
+     
 if a == 'vc':
     print('Введите полное название первой картинки')
     a1 = input()
@@ -90,11 +94,21 @@ if a == 'vc':
                 (pix1[col, row][1]+pix2[col, row][1]) % 256,
                 (pix1[col, row][2]+pix2[col, row][2]) % 256)
     flag.save("flag.png")
-if a not in ['hex', 'rsa', 'cas', 'vc']:
+if a not in ['hex', 'rsa', 'cas', 'vc', 'b64', 'b32']:
     print('error: Неизвесная комманда, попробуйте еще раз')
     inp()
+    
 if a == 'hex':
     print('Введите строку')
     s = input()
     print('Результат:')
     print(bytearray.fromhex(s).decode())
+    
+if a == 'b64':
+    print('Введите сторку')
+    print('Результат:', base64.b64decode(input()))
+    
+if a == 'b32':
+    print('Введите сторку')
+    print('Результат:', base64.b32decode(input()))
+    
