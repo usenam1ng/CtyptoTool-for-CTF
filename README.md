@@ -13,6 +13,11 @@ USAGE:
 
 4) To convert HEX to text type: hex
 
-5) To quit type: quit
+5) To decrypt base64: b64
+
+6) To decrypt base32: b64
+
+7) To quit type: quit
+
 
 Design in GGZ community.
